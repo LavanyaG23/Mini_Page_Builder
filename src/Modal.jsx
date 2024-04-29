@@ -1,17 +1,22 @@
-import React, { useCallback, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useCallback, useState } from "react";  // Importing React and necessary hooks
+import PropTypes from "prop-types";  // Importing PropTypes for type-checking props
 
+// Modal component for editing element properties
 const Modal = ({ setShowModal, element = {}, handleAddOrUpdateElement }) => {
-  const { id } = element;
+  const { id } = element;  // Destructuring 'id' from the 'element' prop
 
+  // State for form values, initialized with element data or empty object
   const [formValues, setFormValues] = useState(
     JSON.parse(JSON.stringify(element))
   );
 
+  // Callback to close the modal
   const handleClose = useCallback(() => {
-    setShowModal(false);
-  }, [setShowModal]);
+    setShowModal(false);   // Calling setShowModal to hide the modal
+  }, [setShowModal]);   // Dependency array with setShowModal as a dependency
 
+
+  // Callback to handle changes in form input fields
   const handleChange = useCallback(
     (e) => {
       const { id, value } = e.target;
@@ -20,25 +25,31 @@ const Modal = ({ setShowModal, element = {}, handleAddOrUpdateElement }) => {
     [setFormValues]
   );
 
+  
+  // Callback to handle form submission (saving changes)
   const handleSave = useCallback(
     (e) => {
-      e.preventDefault();
+      e.preventDefault();   // Preventing default form submission behavior
       const { text, x, y, fontSize, fontWeight } = formValues;
+      // Checking if all required form fields are filled
       if (text && x && y && fontSize && fontWeight) {
+        // Calling handleAddOrUpdateElement to update element data
         handleAddOrUpdateElement({ id, ...formValues });
-        setShowModal(false);
+        setShowModal(false);   // Closing the modal after saving changes
       }
     },
     [setShowModal, formValues, handleAddOrUpdateElement, id]
   );
 
+
+  // Rendering the modal UI
   return (
     <div className="modal-background" onClick={handleClose}>
       <form
         id="modal-form"
         className="modal-box"
         onSubmit={handleSave}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}   // Preventing modal closure when clicking inside the form
       >
         <div className="close-button" onClick={handleClose}>
           X
@@ -97,10 +108,12 @@ const Modal = ({ setShowModal, element = {}, handleAddOrUpdateElement }) => {
   );
 };
 
-export default Modal;
+export default Modal;   // Exporting the Modal component as default
 
+
+// PropTypes for Modal component to specify the expected types of props
 Modal.propTypes = {
-  setShowModal: PropTypes.func.isRequired,
-  element: PropTypes.object,
-  handleAddOrUpdateElement: PropTypes.func.isRequired,
+  setShowModal: PropTypes.func.isRequired,   // Function to control modal visibility
+  element: PropTypes.object,   // Element data to be edited (optional)
+  handleAddOrUpdateElement: PropTypes.func.isRequired,    // Function to add/update element data
 };
