@@ -1,6 +1,7 @@
 # Mini_Page_Builder
  Almabase Frontend Inten Assignment
- 
+ ![WhatsApp Image 2022-11-17 at 15 19 29](https://github.com/LavanyaG23/Mini_Page_Builder/assets/92771328/e02d2b3d-7835-4a3c-b484-cc30806b13a1)
+
 The Mini Page Builder a tool for creating pages without needing to write a bunch of code, offering a user-centric approach to page creation. By leveraging intuitive drag-and-drop functionality and customizable elements, users can easily assemble and customize their pages with minimal effort.
 
 Key Features:-
