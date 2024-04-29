@@ -1,0 +1,208 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f3f2;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  flex-direction: row-reverse;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2d2c2c;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto; 
+} 
+
+.sidebar-header {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 16px;
+  margin-bottom: 20px;
+  font-family: "Inter var" , sans-serif;
+  text-decoration: none solid rgba(0,0,0,0.898);
+
+}
+
+.sidebar .draggable-element {
+  font-weight: 300;
+  margin-bottom: 8px;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  text-transform: capitalize;
+}
+
+.sidebar .draggable-element:hover {
+  background-color: #e0e0e0;
+}
+
+.sidebar .draggable-element svg {
+  fill: #808080;
+  margin-right: 10px;
+}
+
+.page {
+  flex: 1;
+  position: relative;
+  background-color: #f3f2f2;
+  border: 2px dashed #ddd;
+}
+
+.element {
+  border: 2px solid transparent;
+  padding: 10px;
+}
+
+.element:hover {
+  border-color: #ff0000;
+}
+
+.custom-cursor {
+  cursor: url('../assets/cursor_image.png'), auto;
+}
+
+.element.dragging {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+.element.selected {
+  border-color: red;
+}
+
+
+.element {
+  
+  border: 2px solid transparent;
+  padding: 10px;
+  background-color: #ffffff; /* Pure white background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  cursor: url('../assets/cursor_image.png'), auto;
+}
+
+.element.dragging {
+  box-shadow: 0 0 10px rgba(0.9, 0.9, 0.9, 0.9);
+}  
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(123, 122, 123, 0.80); /* Dark gray with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background-color: #ffffff; /* White box */
+  width: 350px;
+  height: 490px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-heading {
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: -2px;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal-heading::after {
+  content: '';
+  display: block;
+  width: 110%;
+  height: 1px;
+  background-color: #ccc;
+  margin-left: -18px;
+  margin-top: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ccc;
+  padding: 7px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.modal-content {
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.input-label {
+  margin-bottom: 0px;
+}
+
+.input-field {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.save-button {
+  background-color: #0144c0;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #012c84;
+}
+
+/* App.css */
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.element {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.element.selected {
+  border: 2px solid red;
+}
+
+.element.dragging {
+  opacity: 0.5;
+}
+
+
