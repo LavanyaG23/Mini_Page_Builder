@@ -66,5 +66,7 @@ Components:
 
 ### **Stopping the Application:**
     - To stop the development server, go back to your terminal or command prompt and press **`Ctrl + C`**.
-    - You'll be prompted to confirm whether you want to terminate the process. Type **`Y`** and press **`Enter`** to confirm.
+    - You'll be prompted to confirm whether you want to terminate the process. Type **`Y`** and press **`Enter`** to 
+    ![Mini_page_builder_ss](https://github.com/LavanyaG23/Mini_Page_Builder/assets/92771328/144ce106-fb68-468e-a908-a870c3bada0f)
+confirm.
 
