@@ -202,3 +202,18 @@ body {
   opacity: 0.5; /* Setting opacity for dragging effect */
 }
 
+/* Styling for export button */
+.export-button {
+  background-color: #4caf50; /* Green background color */
+  color: #ffffff; /* White text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Cursor pointer */
+  margin-top: 20px; /* Top margin */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.export-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

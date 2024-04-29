@@ -32,7 +32,7 @@ const DragIcon = () => (
 
 // MenuItem component representing each draggable menu item
 const MenuItem = ({ type, setCurrentElementDetails, setShowModal }) => {
-  
+
   // Callback function for handling drag end event
   const handleDragEnd = useCallback(
     (e) => {
@@ -68,7 +68,7 @@ const MenuItem = ({ type, setCurrentElementDetails, setShowModal }) => {
 };
 
 // Sidebar component displaying menu items
-const Sidebar = ({ setCurrentElementDetails, setShowModal }) => (
+const Sidebar = ({ setCurrentElementDetails, setShowModal, exportPage  }) => (
   <div className="sidebar">
     {/* Sidebar header */}
     <div className="sidebar-header">BLOCKS</div>
@@ -81,6 +81,8 @@ const Sidebar = ({ setCurrentElementDetails, setShowModal }) => (
         setShowModal={setShowModal}
       />
     ))}
+     {/* Export button */}
+     <button className="export-button" onClick={exportPage}>Export Page</button>
   </div>
 );
 

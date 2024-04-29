@@ -103,6 +103,21 @@ const App = () => {
   );
 
 
+
+  const exportPage = () => {
+    const filename = "page_config.json"; // Set the filename
+    const json = JSON.stringify(savedElements); // Convert the page configuration to JSON format
+    const blob = new Blob([json], { type: "application/json" }); // Create a Blob object
+    const url = URL.createObjectURL(blob); // Generate a URL for the Blob
+    const link = document.createElement("a"); // Create a link element
+    link.href = url; // Set the link's href attribute to the URL
+    link.download = filename; // Set the download attribute to the filename
+    document.body.appendChild(link); // Append the link to the document body
+    link.click(); // Simulate a click on the link
+    document.body.removeChild(link); // Remove the link from the document body
+  };
+
+
   // Rendering the main App component
   return (
 
@@ -120,6 +135,7 @@ const App = () => {
       // These props are functions passed down to allow the Sidebar to interact with the state of the App component.
         setCurrentElementDetails={setCurrentElementDetails}
         setShowModal={setShowModal}
+        exportPage={exportPage} // Pass the exportPage function as a prop
       />
 
 
@@ -134,7 +150,7 @@ const App = () => {
         handleDragAndDrop={handleDragAndDrop}
       />
 
-      
+
       {/* Modal component */}
       {showModal && (
         <Modal
